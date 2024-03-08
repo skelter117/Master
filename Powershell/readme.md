@@ -1,1 +1,1 @@
-Powershell Scrips for systems engineering and administration
+Powershell Scripts. Do not use maliciously
