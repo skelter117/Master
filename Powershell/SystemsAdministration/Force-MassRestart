@@ -1,0 +1,11 @@
+$subnet = Read-Host "Enter the network in CIDR that you want to restart: "
+$ipAddresses = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPEnabled -eq $true -and $_.IPAddress -ne $null } | ForEach-Object { $_.IPAddress }
+
+# Get IP addresses within the specified subnet
+$subnetIPs = Get-IPAddressInRange -Network $subnet
+
+foreach ($ip in $ipAddresses) {
+    if ((Test-Connection -ComputerName $ip -Count 1 -Quiet) -and ($subnetIPs -contains $ip)) {
+        Restart-Computer -ComputerName $ip -Force
+    }
+}
