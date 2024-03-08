@@ -1,0 +1,19 @@
+#If you do not have netcat installed
+
+
+$listener = [System.Net.Sockets.TcpListener]::new('0.0.0.0', 8888)
+$listener.Start()
+
+Write-Host "Listening for connections on port 8888..."
+
+$client = $listener.AcceptTcpClient()
+$stream = $client.GetStream()
+$reader = [System.IO.StreamReader]::new($stream)
+$data = $reader.ReadLine()
+
+Write-Host "Received data: $data"
+
+$reader.Close()
+$stream.Close()
+$client.Close()
+$listener.Stop()
