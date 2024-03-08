@@ -1,0 +1,21 @@
+REM Open PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+
+REM Download SysinternalsSuite.zip
+STRING Invoke-WebRequest -Uri "https://live.sysinternals.com/Tools/SysinternalsSuite.zip" -OutFile "$env:TEMP\SysinternalsSuite.zip"
+ENTER
+DELAY 500
+
+REM Extract SysinternalsSuite.zip
+STRING Expand-Archive -Path "$env:TEMP\SysinternalsSuite.zip" -DestinationPath "$env:USERPROFILE\Desktop\SysInternalsSuite"
+ENTER
+DELAY 1000
+
+REM Remove downloaded zip file
+STRING Remove-Item -Path "$env:TEMP\SysinternalsSuite.zip" -Force
+ENTER
+DELAY 500

