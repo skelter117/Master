@@ -1,0 +1,1 @@
+These scripts are all on this master repository for ease of use with gitclones in case you did not want to request a specific language repository. Please do not use maliciously, only on authorized environments and devices
