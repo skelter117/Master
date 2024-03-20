@@ -1,12 +1,21 @@
-#Useful links with resources
+# ~Useful links with resources~
 
-#Redteam
+#1) Github tools:
+
+#Kerbrute
+https://github.com/ropnop/kerbrute/releases
+
+#Impacket
+https://github.com/fortra/impacket.git
+
+
+#2) Redteam
 
 https://tex2e.github.io/reverse-shell-generator/index.html
 https://virusshare.com/
 
 
-#Blueteam
+#3) Blueteam
 
 https://www.talosintelligence.com
 https://www.virustotal.com/gui/home/upload
