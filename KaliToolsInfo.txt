@@ -1,0 +1,103 @@
+#Kali tools and an brief explanation of what they do
+
+
+
+nmap (nmap): Network mapper for discovering hosts and services on a network.
+
+Wireshark (wireshark): Packet analyzer for capturing and analyzing network traffic.
+
+John the Ripper (john): Password cracker for Unix, macOS, and Windows systems.
+
+Metasploit Framework (msfconsole): Penetration testing framework with a large database of exploits.
+
+Burp Suite (burpsuite): Web vulnerability scanner and security testing tool for finding vulnerabilities in web applications.
+
+sqlmap (sqlmap): Automated SQL injection and database takeover tool.
+
+Nessus (nessus): Vulnerability scanner for assessing network security.
+
+Hydra (hydra): Online password cracker for various network protocols.
+
+Aircrack-ng (aircrack-ng): Wireless network security assessment tool for cracking WEP/WPA keys.
+
+Nikto (nikto): Web server scanner that detects vulnerabilities and misconfigurations.
+
+ZAP (zap): OWASP Zed Attack Proxy for finding vulnerabilities in web applications.
+
+DirBuster (dirbuster): Web application scanner for brute-forcing directories and files.
+
+Snort (snort): Intrusion detection system (IDS) and network intrusion prevention system (NIPS).
+
+tcpdump (tcpdump): Packet analyzer used for capturing and analyzing network traffic.
+
+Hashcat (hashcat): Advanced password recovery tool for cracking passwords using various methods.
+
+Wpscan (wpscan): WordPress vulnerability scanner for detecting security issues in WordPress installations.
+
+Gobuster (gobuster): Directory and file brute-forcing tool.
+
+OWASP Amass (amass): DNS enumeration and information gathering tool.
+
+Acunetix (acunetix): Web vulnerability scanner for identifying security vulnerabilities in web applications.
+
+BeEF (beef-xss): Browser Exploitation Framework for targeting web browsers.
+
+Recon-ng (recon-ng): Web reconnaissance framework for information gathering.
+
+John the Ripper Jumbo (johnny): Extended version of John the Ripper for more advanced password cracking.
+
+Maltego (maltego): Data visualization tool for mapping and analyzing relationships between entities.
+
+THC-Hydra (hydra): Password cracker for numerous protocols including FTP, HTTP, HTTPS, SMB, etc.
+
+Wfuzz (wfuzz): Web application bruteforcer for finding vulnerabilities.
+
+Armitage (armitage): Graphical cyber attack management tool for Metasploit.
+
+SQLNinja (sqlninja): SQL injection tool for exploiting SQL vulnerabilities in web applications.
+
+EtherApe (etherape): Network traffic visualization tool for monitoring network activity.
+
+OWASP ZAP (zap): Penetration testing tool for finding vulnerabilities in web applications.
+
+Metasploit Pro (msfpro): Commercial version of Metasploit with additional features and support.
+
+Golismero (golismero): Web application security testing tool for finding vulnerabilities.
+
+WPScan (wpscan): WordPress vulnerability scanner for identifying security issues.
+
+HTTrack (httrack): Website copier for creating a local mirror of a website.
+
+THC-SSL-DOS (thc-ssl-dos): Tool for exploiting the SSL renegotiation vulnerability.
+
+SQLMap (sqlmap): SQL injection tool for detecting and exploiting SQL vulnerabilities.
+
+Yersinia (yersinia): Framework for layer 2 attacks, such as VLAN hopping, ARP spoofing, etc.
+
+Snort (snort): Open-source network intrusion detection system (NIDS).
+
+Aircrack-ng Suite (aircrack-ng): Collection of tools for auditing wireless networks.
+
+THC-Hydra (hydra): Fast network logon cracker that supports numerous protocols.
+
+W3af (w3af): Web application attack and audit framework for finding vulnerabilities.
+
+Armitage (armitage): Graphical cyber attack management tool for Metasploit.
+
+OWTF (owtf): Offensive Web Testing Framework for pentesting web applications.
+
+Metasploit Community Edition (msfcommunity): Open-source version of the Metasploit Framework.
+
+SPARTA (sparta): Graphical interface for scanning and enumeration during penetration testing.
+
+Responder (responder): LLMNR, NBT-NS, and MDNS poisoner for capturing credentials.
+
+Kismet (kismet): Wireless network detector, sniffer, and intrusion detection system.
+
+Metagoofil (metagoofil): Metadata gathering tool for extracting information from public documents.
+
+Wifite (wifite): Automated wireless attack tool for cracking WEP/WPA/WPS networks.
+
+SET (setoolkit): Social Engineering Toolkit for conducting social engineering attacks.
+
+BBQSQL (bbqsql): Blind SQL injection exploitation tool.
