@@ -1,0 +1,16 @@
+#Useful links with resources
+
+#Redteam
+
+https://tex2e.github.io/reverse-shell-generator/index.html
+https://virusshare.com/
+
+
+#Blueteam
+
+https://www.talosintelligence.com
+https://www.virustotal.com/gui/home/upload
+https://attack.mitre.org
+https://www.hybrid-analysis.com
+https://nvd.nist.gov/vuln/search
+https://viz.greynoise.io/
