@@ -1,0 +1,23 @@
+#sudo netstat -nltp
+ Get-NetTCPConnection | Format-Table -Property LocalAddress,LocalPort,State,ProcessName 
+
+# sudo lsof -i:<port>
+ Get-Process -Id (Get-NetTCPConnection -LocalPort <port>).OwningProcess 
+
+# sudo systemctl --type=service | grep <name of task> 
+  Get-Service | Where-Object { $_.DisplayName -like '*<name of task>*' } 
+
+# sudo systemctl status <name of service>
+ Get-Service <name of service> | Format-List * 
+
+# sudo kill -9 <pid>
+ Stop-Process -Id <pid> -Force 
+
+# sudo systemctl stop <service name> 
+Stop-Service -Name <service name> 
+
+# sudo systemctl disable <service name>
+ sc.exe config <service name> start= disabled 
+
+# sudo netstat -nltp 
+Get-NetTCPConnection | Format-Table -Property LocalAddress,LocalPort,State,ProcessName
