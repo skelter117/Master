@@ -1,0 +1,40 @@
+1.	Event ID 4624: Successful account logon.
+2.	Event ID 4625: Failed account logon.
+3.	Event ID 4648: A logon was attempted using explicit credentials.
+4.	Event ID 4768: A Kerberos authentication ticket (TGT) request.
+5.	Event ID 4769: A Kerberos service ticket request.
+6.	Event ID 4776: The domain controller attempted to validate the credentials for an account.
+7.	Event ID 5140: A network share object was accessed.
+8.	Event ID 5145: A network share object was checked to see whether client can be granted desired access.
+9.	Event ID 5156: Windows Filtering Platform has permitted a connection.
+10.	Event ID 5158: Windows Filtering Platform has blocked a connection.
+11.	Event ID 1102: The audit log was cleared.
+12.     Event ID 4663: File system changes "an attempt was made to access an object"
+13.     Event ID 4672: Special priveleges assigned to a new logon.
+System Event IDs:
+12.	Event ID 7045: A service was installed in the system.
+13.	Event ID 7035: The Service Control Manager has sent a start control to a service.
+14.	Event ID 7036: The system's state has changed.
+15.	Event ID 7040: The start type of the service was changed.
+16.	Event ID 7045: A service was installed in the system.
+
+Application Event IDs:
+17.	Event ID 1000: Application Error.
+18.	Event ID 1001: Windows Error Reporting.
+19.	Event ID 1002: Application Hang.
+20.	Event ID 1003: Application Hang.
+21.	Event ID 1023: .NET Runtime.
+22.	Event ID 1102: Windows Installer.
+
+DNS Event IDs:
+23.	Event ID 7050: The DNS server query could not be completed.
+24.	Event ID 7053: DNS server send requests to forwarders.
+Microsoft Exchange Event IDs:
+
+25.	Event ID 1008: Exchange database mounting.
+26.	Event ID 1007: Exchange mailbox deletion.
+27.	Event ID 1016: Exchange mailbox access.
+PowerShell Event IDs:
+
+28.	Event ID 400: A new Windows process was created by the user.
+29.	Event ID 4103: A PowerShell provider's client data has changed.
