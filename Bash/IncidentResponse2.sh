@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo netstat -nltp
+sudo netstat -tulpan
 
 read -p "Enter the port number to investigate: " port
 
