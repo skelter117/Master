@@ -1,6 +1,6 @@
 #Kali tools and an brief explanation of what they do
 
-
+xfreerdp (xfreerdp /u:admin /p:password /cert:ignore /v:targetip) A remote desktop tool
 
 nmap (nmap): Network mapper for discovering hosts and services on a network.
 
