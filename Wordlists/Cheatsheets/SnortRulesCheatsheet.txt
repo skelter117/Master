@@ -1,0 +1,27 @@
+alert tcp any 21 <> any any (msg:"FTP port 21 inbound traffic detected"; sid:1000000000003; rev:1;)
+alert tcp any any <> any 21 (msg:"FTP port 21 outbound traffic detected"; sid:1000000000004; rev:1;)
+# alert tcp any any <> any 21 (msg:"Failed FTP login attempt"; content:"530"; sid:1000000000019; rev:1;)
+
+alert tcp any 22 <> any any (msg:"SSH port 22 inbound traffic detected"; sid:1000000000005; rev:1;)
+alert tcp any any <> any 22 (msg:"SSH port 22 outbound traffic detected"; sid:1000000000006; rev:1;)
+# alert tcp any any <> any 22 (msg:"Failed SSH login attempt"; content:"Failed password"; sid:1000000000020; rev:1;)
+
+alert tcp any 23 <> any any (msg:"Telnet port 23 inbound traffic detected"; sid:1000000000007; rev:1;)
+alert tcp any any <> any 23 (msg:"Telnet port 23 outbound traffic detected"; sid:1000000000008; rev:1;)
+# alert tcp any any <> any 23 (msg:"Failed Telnet login attempt"; content:"Login failed"; sid:1000000000021; rev:1;)
+
+alert tcp any 25 <> any any (msg:"SMTP port 25 inbound traffic detected"; sid:1000000000009; rev:1;)
+alert tcp any any <> any 25 (msg:"SMTP port 25 outbound traffic detected"; sid:1000000000010; rev:1;)
+
+alert tcp any 80 <> any any (msg:"HTTP port 80 inbound traffic detected"; sid:1000000000011; rev:1;)
+alert tcp any any <> any 80 (msg:"HTTP port 80 outbound traffic detected"; sid:1000000000012; rev:1;)
+
+alert tcp any 443 <> any any (msg:"HTTPS port 443 inbound traffic detected"; sid:1000000000013; rev:1;)
+alert tcp any any <> any 443 (msg:"HTTPS port 443 outbound traffic detected"; sid:1000000000014; rev:1;)
+
+alert tcp any 445 <> any any (msg:"SMB port 445 inbound traffic detected"; sid:1000000000015; rev:1;)
+alert tcp any any <> any 445 (msg:"SMB port 445 outbound traffic detected"; sid:1000000000016; rev:1;)
+
+alert tcp any 3389 <> any any (msg:"RDP port 3389 inbound traffic detected"; sid:1000000000017; rev:1;)
+alert tcp any any <> any 3389 (msg:"RDP port 3389 outbound traffic detected"; sid:1000000000018; rev:1;)
+# alert tcp any any <> any 3389 (msg:"Failed RDP login attempt"; content:"Login failed"; sid:1000000000022; rev:1;)
