@@ -30,3 +30,37 @@ alert tcp any any <> any 445 (msg:"SMB port 445 outbound traffic detected"; sid:
 alert tcp any 3389 <> any any (msg:"RDP port 3389 inbound traffic detected"; sid:1000000000017; rev:1;)
 alert tcp any any <> any 3389 (msg:"RDP port 3389 outbound traffic detected"; sid:1000000000018; rev:1;)
 # alert tcp any any <> any 3389 (msg:"Failed RDP login attempt"; content:"Login failed"; sid:1000000000022; rev:1;)
+
+
+# More Template samples:
+
+# Sample Snort rules
+# Rule to detect ICMP Echo Request packets
+# alert icmp any any -> any any (msg:"ICMP Echo Request"; icmp_type:8; sid:100001;)
+
+# Rule to detect HTTP GET requests to a specific URL
+# alert tcp any any -> any 80 (msg:"HTTP GET request to /login"; content:"GET /login"; sid:100002;)
+
+# Rule to detect SSH brute force attempts
+# alert tcp any any -> any 22 (msg:"SSH Brute Force Attempt"; content:"SSH-"; threshold: type threshold, track by_src, count 5, seconds 60; sid:100003;)
+
+# Rule to detect FTP login attempts with a specific username
+# alert tcp any any -> any 21 (msg:"FTP login attempt with username admin"; content:"USER admin"; sid:100004;)
+
+# Rule to detect DNS zone transfer attempts
+# alert udp any any -> any 53 (msg:"DNS Zone Transfer Attempt"; content:"|00|"; depth: 1; content:"|09|AXFR"; sid:100005;)
+
+# Rule to detect SQL injection attempts in HTTP requests
+# alert tcp any any -> any 80 (msg:"SQL Injection Attempt"; uricontent:"/login.php?"; content:"union select"; sid:100006;)
+
+# Rule to detect Nmap scans
+# alert tcp any any -> any any (msg:"Nmap scan detected"; flags:S; detection_filter: track by_dst, count 10, seconds 60; sid:100007;)
+
+# Rule to detect SMB brute force attempts
+# alert tcp any any -> any 445 (msg:"SMB Brute Force Attempt"; content:"|00|"; depth: 1; content:"|05|"; within: 1; sid:100008;)
+
+# Rule to detect suspicious DNS queries
+# alert udp any any -> any 53 (msg:"Suspicious DNS Query"; content:"|00|"; depth: 1; content:"|01|"; offset: 2; sid:100009;)
+
+# Rule to detect FTP file downloads
+# alert tcp any any -> any 21 (msg:"FTP File Download"; content:"RETR "; sid:100010;)
