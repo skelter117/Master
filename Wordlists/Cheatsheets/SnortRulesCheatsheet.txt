@@ -1,6 +1,6 @@
 # Help:
 # (Real-time monitoring) sudo snort -A console -q -c /etc/snort/snort.conf -i eth0
-# (Continuous monitoring and logging) to be determined somewhere in config file
+# (Continuous monitoring and logging) sudo snort -q -l /var/log/snort -i eth0 -A console -c /etc/snort/snort.conf
 
 
 alert tcp any 21 <> any any (msg:"FTP port 21 inbound traffic detected"; sid:1000000000003; rev:1;)
