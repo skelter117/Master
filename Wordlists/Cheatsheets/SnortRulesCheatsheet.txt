@@ -32,9 +32,10 @@ alert tcp any any <> any 3389 (msg:"RDP port 3389 outbound traffic detected"; si
 # alert tcp any any <> any 3389 (msg:"Failed RDP login attempt"; content:"Login failed"; sid:1000000000022; rev:1;)
 
 
-# More Template samples:
+# More Template samples, make sure to change SID:
 
-# Sample Snort rules
+# (Can also specify defined $HOME_NET variable in alert icmp any any -> $HOME_NET any (msg:"ICMP Echo Request"; icmp_type:8; sid:100001;))
+
 # Rule to detect ICMP Echo Request packets
 # alert icmp any any -> any any (msg:"ICMP Echo Request"; icmp_type:8; sid:100001;)
 
