@@ -1,0 +1,44 @@
+# LDAP Flags
+
+-x: Specifies simple authentication, which is often used when no authentication is required.
+-h <hostname>: Specifies the LDAP server hostname or IP address.
+-b <base_dn>: Sets the base DN (Distinguished Name) for the search operation.
+-LLL: Produces LDIF (LDAP Data Interchange Format) output without comments and search metadata.
+-D <bind_dn>: Specifies the bind DN (Distinguished Name) for authentication.
+-w <password>: Specifies the password associated with the bind DN for authentication.
+-E <filename>: Specifies a file to log LDAP search entries.
+-z <max_results>: Limits the maximum number of search results returned.
+-s <scope>: Sets the search scope (base, onelevel, or subtree).
+-A: Shows attributes and values of entries in the search result.
+
+# LDAP Enumeration Commands
+
+# 1. Enumerate all users:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=user)"
+
+# 2. Enumerate all groups:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=group)"
+
+# 3. Enumerate all computers:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=computer)"
+
+# 4. Enumerate all organizational units (OUs):
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=organizationalUnit)"
+
+# 5. Enumerate all printers:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=printQueue)"
+
+# 6. Enumerate all DNS records:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=dnsNode)"
+
+# 7. Enumerate all service accounts:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=serviceAccount)"
+
+# 8. Enumerate all security groups:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(objectClass=groupOfUniqueNames)"
+
+# 9. Enumerate all administrators:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(memberOf=cn=Administrators,cn=Builtin,dc=example,dc=com)"
+
+# 10. Enumerate all disabled user accounts:
+ldapsearch -x -h <domainControllerIP> -b "dc=example,dc=com" -LLL "(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))"
