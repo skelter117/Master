@@ -1,3 +1,8 @@
+# Help:
+# (Real-time monitoring) sudo snort -A console -q -c /etc/snort/snort.conf -i eth0
+# (Continuous monitoring and logging) to be determined somewhere in config file
+
+
 alert tcp any 21 <> any any (msg:"FTP port 21 inbound traffic detected"; sid:1000000000003; rev:1;)
 alert tcp any any <> any 21 (msg:"FTP port 21 outbound traffic detected"; sid:1000000000004; rev:1;)
 # alert tcp any any <> any 21 (msg:"Failed FTP login attempt"; content:"530"; sid:1000000000019; rev:1;)
