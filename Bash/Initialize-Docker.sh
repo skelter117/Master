@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sudo apt-get update -y
-
 sudo apt-get install docker.io -y
 
 read -p "Would you like to start a container? (yes/no): " choice
@@ -9,12 +8,28 @@ read -p "Would you like to start a container? (yes/no): " choice
 if [[ $choice == "yes" ]]; then
     read -p "Which image would you like to use? (ubuntu/kali/centos): " image
 
-    if [[ $image == "kali" ]]; then
-        image="kalilinux/kali-rolling"
-    fi
+    case $image in
+        ubuntu)
+            image="ubuntu:latest"
+            ;;
+        kali)
+            image="kalilinux/kali-rolling:latest"
+            ;;
+        centos)
+            image="centos:latest"
+            ;;
+        *)
+            echo "Invalid image choice. Exiting script."
+            exit 1
+            ;;
+    esac
 
     read -p "What would you like to name the container? " name
 
+    # Pull the latest image
+    sudo docker pull $image
+
+    # Start the container
     sudo docker run -d -t --name $name $image
 
     if sudo docker ps -a --format '{{.Names}}' | grep -q $name; then
