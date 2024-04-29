@@ -17,7 +17,7 @@ for port in $OpenPorts; do
 done
 
 echo "Adding explicit deny rule..."
-sudo ufw deny add-shell
+sudo ufw default deny incoming
 
 read -p "Do you want to enable the firewall? (y/n) " decision
 if [[ "$decision" =~ ^[Yy]$ ]]; then
