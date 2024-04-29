@@ -8,45 +8,38 @@ if ! [[ $targetIP =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     exit 1
 fi
 
-# Retrieving system information
-deviceModel=$(sudo dmidecode -t system | awk -F: '/Product Name/ {print $2}' | tr -d '[:space:]')
-motherboardModel=$(sudo dmidecode -t baseboard | awk -F: '/Product Name/ {print $2}' | tr -d '[:space:]')
-serialNumber=$(sudo dmidecode -t system | awk -F: '/Serial Number/ {print $2}' | tr -d '[:space:]')
-ramCapacity=$(grep MemTotal /proc/meminfo | awk '{print $2 / 1024 / 1024}')
-diskCapacity=$(df -h | awk '$6 == "/" {print $2}')
-usedDiskSpace=$(df -h | awk '$6 == "/" {print $3}')
-processorName=$(grep "model name" /proc/cpuinfo | uniq | awk -F: '{print $2}' | tr -d '[:space:]')
-processorDescription=$(lscpu | grep "Model name" | awk -F: '{print $2}' | tr -d '[:space:]')
-lastBootUpTime=$(uptime -s)
-uptime=$(uptime -p)
-macAddress=$(ip link | awk '$1 == "link/ether" {print $2; exit}')
+# Check if the target IP belongs to a Windows or Linux system
+ping -c 1 -W 1 $targetIP > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo "Windows System Detected."
+    # Windows system information queries
+    deviceModel=$(sudo dmidecode -t system | awk -F: '/Product Name/ {print $2}' | tr -d '[:space:]')
+    motherboardModel=$(sudo dmidecode -t baseboard | awk -F: '/Product Name/ {print $2}' | tr -d '[:space:]')
+    serialNumber=$(sudo dmidecode -t system | awk -F: '/Serial Number/ {print $2}' | tr -d '[:space:]')
+    ramCapacity=$(grep MemTotal /proc/meminfo | awk '{print $2 / 1024 / 1024}')
+    diskCapacity=$(df -h | awk '$6 == "/" {print $2}')
+    usedDiskSpace=$(df -h | awk '$6 == "/" {print $3}')
+    processorName=$(grep "model name" /proc/cpuinfo | uniq | awk -F: '{print $2}' | tr -d '[:space:]')
+    processorDescription=$(lscpu | grep "Model name" | awk -F: '{print $2}' | tr -d '[:space:]')
+    lastBootUpTime=$(uptime -s)
+    uptime=$(uptime -p)
+    macAddress=$(ip link | awk '$1 == "link/ether" {print $2; exit}')
 
-# Printing system information
-echo "Device Model is: $deviceModel"
-echo "Motherboard Model is: $motherboardModel"
-echo "Serial Number is: ${serialNumber:-Not Available}"
-echo "Total RAM Capacity (GB): $ramCapacity"
-echo "HDD/SSD Size (C: drive) (GB): $diskCapacity"
-echo "Used Disk Space (C: drive) (GB): $usedDiskSpace"
-echo "Processor Name is: $processorName"
-echo "Processor Description: $processorDescription"
-echo "Last Boot Up Time: $lastBootUpTime"
-echo "Uptime: $uptime"
-echo "MAC Address: ${macAddress:-Not Available}"
-
-
-#if the device target is linux
-#!/bin/bash
-
-read -p "Enter the hostname or IP address you want to check on: " targetHostname
-
-# Resolve the IP address of the target
-targetIP=$(getent ahosts "$targetHostname" | awk '/^([0-9]{1,3}\.){3}[0-9]{1,3}/{print $1; exit}')
-
-if [ -z "$targetIP" ]; then
-    echo "Hostname not found or does not have an IP address."
+    # Printing system information
+    echo "Device Model is: $deviceModel"
+    echo "Motherboard Model is: $motherboardModel"
+    echo "Serial Number is: ${serialNumber:-Not Available}"
+    echo "Total RAM Capacity (GB): $ramCapacity"
+    echo "HDD/SSD Size (C: drive) (GB): $diskCapacity"
+    echo "Used Disk Space (C: drive) (GB): $usedDiskSpace"
+    echo "Processor Name is: $processorName"
+    echo "Processor Description: $processorDescription"
+    echo "Last Boot Up Time: $lastBootUpTime"
+    echo "Uptime: $uptime"
+    echo "MAC Address: ${macAddress:-Not Available}"
 else
-    # Retrieve system information
+    echo "Linux System Detected."
+    # Linux system information queries
     model=$(sudo dmidecode -s system-product-name)
     motherboard=$(sudo dmidecode -s baseboard-product-name)
     serial=$(sudo dmidecode -s system-serial-number)
@@ -68,3 +61,4 @@ else
     echo "Last Bootup Time: $last_bootup"
     echo "Currently logged-in user: $current_user"
 fi
+   
