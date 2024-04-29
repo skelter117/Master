@@ -1,0 +1,70 @@
+# UFW Cheat Sheet
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+#sudo ufw <AllowOrDeny> from <ip> to <any> port <portnumber>
+
+## Allow Rules
+# Allow SSH connections (port 22) from any IP address
+#sudo ufw allow from any to any port 22
+
+# Allow HTTP traffic (port 80) from any IP address
+#sudo ufw allow from any to any port 80
+
+# Allow HTTPS traffic (port 443) from any IP address
+#sudo ufw allow from any to any port 443
+
+# Allow FTP traffic (port 21) from any IP address
+#sudo ufw allow from any to any port 21
+
+# Allow SMTP traffic (port 25) from any IP address
+#sudo ufw allow from any to any port 25
+
+# Allow DNS traffic (port 53) from any IP address
+#sudo ufw allow from any to any port 53
+
+# Allow RDP traffic (port 3389) from any IP address
+#sudo ufw allow from any to any port 3389
+
+# Allow MySQL traffic (port 3306) from any IP address
+#sudo ufw allow from any to any port 3306
+
+# Allow SMB traffic (port 445) from any IP address
+#sudo ufw allow from any to any port 445
+
+# Allow SSH on a non-standard port (e.g., 2222) from any IP address
+#sudo ufw allow from any to any port 2222
+
+## Deny Rules
+# Deny SSH (port 22) from any IP address
+#sudo ufw deny from any to any port 22
+
+# Deny HTTP (port 80) from any IP address
+#sudo ufw deny from any to any port 80
+
+# Deny HTTPS (port 443) from any IP address
+#sudo ufw deny from any to any port 443
+
+# Deny FTP (port 21) from any IP address
+#sudo ufw deny from any to any port 21
+
+# Deny SMTP (port 25) from any IP address
+#sudo ufw deny from any to any port 25
+
+# Deny DNS (port 53) from any IP address
+#sudo ufw deny from any to any port 53
+
+# Deny RDP (port 3389) from any IP address
+#sudo ufw deny from any to any port 3389
+
+# Deny MySQL (port 3306) from any IP address
+#sudo ufw deny from any to any port 3306
+
+# Deny SMB (port 445) from any IP address
+#sudo ufw deny from any to any port 445
+
+# Deny SSH on a non-standard port (e.g., 2222) from any IP address
+#sudo ufw deny from any to any port 2222
+
+
+# Deny all ports from a specific IP address
+# sudo ufw deny from <publicOrPrivateip>
