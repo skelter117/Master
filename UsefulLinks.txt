@@ -14,6 +14,9 @@ https://github.com/fortra/impacket.git
 #Winpeas and Linpeas
 https://github.com/carlospolop/PEASS-ng.git
 
+#snort 2 docker
+https://github.com/nu11secur1ty/snort-2.9.12
+
 
 
 #2) Redteam
