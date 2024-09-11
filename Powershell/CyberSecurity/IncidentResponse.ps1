@@ -20,7 +20,7 @@ function Block-IPPort {
 do {
     $connections = Get-NetTCPConnection
 
-    $ipOrPort = Read-Host "Enter IP address or port number"
+    $ipOrPort = Read-Host "Enter IP address or port number: Alternatively, press enter to pull all PID-Service associations"
 
     $matchingConnections = $connections | Where-Object { $_.LocalAddress -contains $ipOrPort -or $_.RemoteAddress -contains $ipOrPort -or $_.LocalPort -eq $ipOrPort -or $_.RemotePort -eq $ipOrPort }
 
